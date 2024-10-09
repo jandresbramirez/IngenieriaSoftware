@@ -1,0 +1,106 @@
+package persona;
+
+/* CLASE PRINCIPAL */
+public class Principal {
+
+    
+    
+    public static void main(String[] args) {
+        
+        /* INSTANCIAMOS EL OBJETO */
+        
+        Estudiante estudiante1 = new Estudiante("Andres","Ballen",20,1010101,5.0f);
+        
+        estudiante1.mostrarDatosEstudiante();
+    }
+}
+
+
+package persona;
+
+/* CLASE PERSONA */
+public class Persona {
+    private String nombre;
+    private String apellido;
+    private int edad;
+    
+    public Persona(String nombre, String apellido, int edad){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+    }
+    
+    public String getNombre(){
+        return nombre;
+    }
+    
+    public String getApellido(){
+        return apellido;
+    }
+    
+    public int getEdad(){
+        return edad;
+    }
+    
+}
+
+package persona;
+
+/* CLASE ESTUDIANTE */
+public class Estudiante extends Persona{
+    
+    private int codigoEstudiante;
+    private float notaFinal;
+    
+    // constructor
+    public Estudiante(String nombre, String apellido, int edad, int codigoEstudiante, float notaFinal){
+        
+        // con super() llamamos o le informamos al sistema que ya están inicializados en la clase madre Persona
+        super(nombre,apellido,edad);
+        this.codigoEstudiante = codigoEstudiante;
+        this.notaFinal = notaFinal;
+    }
+    
+    public void mostrarDatosEstudiante(){
+        
+        System.out.println("Nombre: " + getNombre() + "\nApellido: " + getApellido() + "\nEdad Estudiante: " + getEdad() + 
+                "\nCodigo de Estudiante: " + codigoEstudiante + "\nNota Final: " + notaFinal );
+    }
+    
+}
+
+
+package persona;
+
+/* CLASE PROFESOR */
+public class Profesor extends Persona{
+    
+    private int codigoProfesor;
+    private String asignatura;
+    
+    // constructor
+    public Profesor(String nombre, String apellido, int edad, int codigoProfesor, String asignatura){
+        
+        // con super() llamamos o le informamos al sistema que ya están inicializados en la clase madre Persona
+        super(nombre,apellido,edad);
+        this.codigoProfesor = codigoProfesor;
+        this.asignatura = asignatura;
+    }
+    
+    public void mostrarDatosProfesor(){
+        
+        System.out.println("Nombre: " + getNombre() + "\nApellido: " + getApellido() + "\nEdad Estudiante: " + getEdad() + 
+                "\nCodigo de Estudiante: " + codigoProfesor + "\nNota Final: " + asignatura );
+    }
+    
+}
+
+/* CADA CLASE FUE CREADA EN UNA VENTAJA DIFERENTE PARA SU CORRECTO FUNCIONAMIENTO */
+
+
+
+
+
+
+
+
